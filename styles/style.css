@@ -104,7 +104,7 @@
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--element-color);
+  border: 1px solid currentColor;
   line-height: 22px;
   pointer-events: none;
   box-shadow: none;
@@ -115,7 +115,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--element-color);
+  border-block-end: 1px solid currentColor;
 }
 
 .header__theme-menu-button:hover {
@@ -180,7 +180,7 @@
 }
 
 .text-link:hover {
-  border-block-end: 1px solid var(--text-color);
+  border-block-end: 1px solid currentColor;
 }
 
 .text-link:focus {
@@ -188,7 +188,7 @@
 }
 
 .text-link:focus-visible {
-  border: 1px solid var(--text-color);
+  border: 1px solid currentColor;
 }
 
 .topic-card:not(:last-child) {
@@ -283,7 +283,7 @@
     grid-column: 1/3;
   }
 
-  .first-topic {
+  .main-title-of-topic {
     grid-row: 1/3;
   }
 
