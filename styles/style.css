@@ -20,7 +20,7 @@
   position: relative;
   grid-template-columns: 1fr;
   align-content: start;
-  margin-block-end: 40px; 
+  margin-block-end: 40px;
   padding: 10px 0;
 }
 
@@ -82,9 +82,9 @@
 
 .header__theme-menu-list {
   display: flex;
+  gap: 10px;
   list-style: none;
   flex-direction: column;
-  gap: 10px; 
 }
 
 .header__theme-menu-item {
@@ -97,7 +97,7 @@
   background-color: transparent;
   border: none;
   text-transform: lowercase;
-  line-height: 100%;  
+  line-height: 100%;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -199,9 +199,8 @@
 }
 
 .topic-focus .card-title {
- font-weight: normal;
+  font-weight: normal;
 }
-
 
 .art {
   inline-size: 100%;
@@ -221,7 +220,7 @@
   align-self: center;
 }
 
-@media (width >= 768px){
+@media (width >= 768px) {
   .page {
     padding: 0 20px;
   }
@@ -238,7 +237,7 @@
   .header__theme-menu {
     margin-block-start: 172px;
     margin-block-end: 173px;
-  }   
+  }
 
   .header-title {
     margin-inline-start: -20px;
@@ -248,12 +247,12 @@
   .focus-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-   
+
   .header-text {
     margin-block-end: 163px;
     inline-size: 50%;
     justify-self: end;
-  } 
+  }
 
   .topic {
     display: grid;
@@ -304,12 +303,12 @@
 
   .ice-cream-image {
     grid-column: 3/4;
-    grid-row: 2/span 2;
+    grid-row: 2 / span 2;
   }
 
   .tape-image {
     grid-column: 1;
-    grid-row: 3/span 2;
+    grid-row: 3 / span 2;
   }
 
   .books-image {
@@ -367,4 +366,3 @@
     grid-column: 3;
   }
 }
-
