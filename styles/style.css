@@ -2,4 +2,369 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  margin: 0 auto;
+  font-family: var(--font-family, monospace);
+  font-size: var(--font-size);
+  background-color: var(--bg-color);
+  padding: 0 10px;
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  align-content: start;
+  margin-block-end: 40px; 
+  padding: 10px 0;
+}
+
+.decorated-zone::before {
+  content: "";
+  justify-self: end;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--element-color);
+  border-inline-end: 1px solid var(--element-color);
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.decorated-zone::after {
+  content: "";
+  align-self: end;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--element-color);
+  border-inline-start: 1px solid var(--element-color);
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.dark-decorated-zone {
+  position: absolute;
+  visibility: var(--is-light);
+  text-transform: uppercase;
+  color: var(--element-color);
+  justify-self: end;
+  font-size: 18px;
+  margin-block-start: 10px;
+  margin-inline-end: 29px;
+}
+
+.dark-decorated-zone::after {
+  content: "";
+  position: absolute;
+  margin-inline-start: 10px;
+  margin-inline-end: 9px;
+  margin-block-start: 8px;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 5px 3px var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  grid-row: 1;
+  grid-column: 1;
+  margin-block-start: 65px;
+  margin-block-end: 65px;
+  color: var(--element-color);
+  block-size: 98px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.header__theme-menu-item {
+  text-align: center;
+}
+
+.header__theme-menu-button {
+  block-size: 26px;
+  inline-size: 70px;
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  line-height: 100%;  
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--element-color);
+  line-height: 22px;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--element-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(var(--border-color), 0.4);
+}
+
+.focus-title {
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 82.5%;
+}
+
+.header-title {
+  margin-block-end: 55px;
+  grid-column: 1;
+}
+
+.header-text {
+  grid-row: 3;
+  grid-column: 1;
+  margin-block-end: 56px;
+}
+
+.subtitle-decor {
+  color: var(--title-decor);
+  background-color: var(--accent-color);
+  font-weight: bold;
+  font-size: var(--font-size);
+  line-height: 23.4px;
+}
+
+.topic:not(:last-child) {
+  margin-block-end: 50px;
+}
+
+.topic-title {
+  color: var(--element-color);
+  font-weight: bold;
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  margin-block-end: 20px;
+}
+
+.card-title {
+  margin-block-end: 10px;
+}
+
+.card-text {
+  color: var(--text-color);
+  font-size: var(--font-size);
+  line-height: 23.4px;
+}
+
+.text-link {
+  text-shadow: 2px 2px var(--accent-color);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.text-link:focus {
+  outline: none;
+}
+
+.text-link:focus-visible {
+  border: 1px solid var(--text-color);
+}
+
+.topic-card:not(:last-child) {
+  margin-block-end: 20px;
+}
+
+.topic-gallery {
+  margin-block-end: 40px;
+}
+
+.topic-subtitle {
+  margin-block-end: 20px;
+}
+
+.topic-focus .card-title {
+ font-weight: normal;
+}
+
+
+.art {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  padding-block: 10px;
+}
+
+.footer-title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  justify-self: center;
+  align-self: center;
+}
+
+@media (width >= 768px){
+  .page {
+    padding: 0 20px;
+  }
+
+  .header {
+    margin-block-end: 60px;
+    padding: 20px 0;
+  }
+
+  .dark-decorated-zone {
+    margin-block-start: 20px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 172px;
+    margin-block-end: 173px;
+  }   
+
+  .header-title {
+    margin-inline-start: -20px;
+    margin-block-end: 162px;
+  }
+
+  .focus-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+   
+  .header-text {
+    margin-block-end: 163px;
+    inline-size: 50%;
+    justify-self: end;
+  } 
+
+  .topic {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+
+  .topic:not(:last-child) {
+    margin-block-end: 80px;
+  }
+
+  .topic-title {
+    grid-column: 1;
+  }
+
+  .topic-card {
+    grid-column: 2;
+  }
+
+  .accent-topic .topic-card {
+    grid-column: 1/3;
+  }
+
+  .first-topic {
+    grid-row: 1/3;
+  }
+
+  .topic-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .images-title {
+    grid-row: 1;
+    grid-column: 1/4;
+    margin-block-end: 0;
+  }
+
+  .art {
+    object-fit: cover;
+    background-position: center;
+  }
+
+  .sunset-image {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .ice-cream-image {
+    grid-column: 3/4;
+    grid-row: 2/span 2;
+  }
+
+  .tape-image {
+    grid-column: 1;
+    grid-row: 3/span 2;
+  }
+
+  .books-image {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .street-image {
+    grid-column: 2/4;
+    grid-row: 4;
+  }
+
+  .topic-gallery {
+    margin-block-end: 60px;
+  }
+
+  .footer {
+    padding-block: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    margin-block-start: 0;
+    justify-self: center;
+    block-size: 26px;
+    margin-block-end: 273px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header-title {
+    margin-block-end: 114px;
+  }
+
+  .header-text {
+    margin-block-end: 114px;
+  }
+
+  .accent-topic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .accent-topic .topic-card:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .accent-topic .topic-card:nth-child(3) {
+    grid-column: 2;
+  }
+
+  .accent-topic .topic-card:nth-child(4) {
+    grid-column: 3;
+  }
+}
+
