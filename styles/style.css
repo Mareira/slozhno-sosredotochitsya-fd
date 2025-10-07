@@ -1,16 +1,12 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-body {
-  margin: 0;
-  padding: 0;
-}
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   margin: 0 auto;
+  padding: 0;
   font-family: var(--font-family, monospace);
   font-size: var(--font-size);
   background-color: var(--bg-color);
-  padding: 0 10px;
   background-image: var(--bg-image);
   background-position: center;
   background-size: cover;
@@ -26,6 +22,7 @@ body {
   align-content: start;
   margin-block-end: 40px;
   padding: 10px 0;
+  margin-inline: 10px;
 }
 
 .decorated-zone::before {
@@ -151,6 +148,10 @@ body {
   line-height: 23.4px;
 }
 
+.main {
+  margin-inline: 10px;
+}
+
 .topic:not(:last-child) {
   margin-block-end: 50px;
 }
@@ -216,6 +217,7 @@ body {
   min-block-size: 668px;
   display: grid;
   padding-block: 10px;
+  margin-inline: 10px;
 }
 
 .footer-title {
@@ -225,13 +227,10 @@ body {
 }
 
 @media (width >= 768px) {
-  .page {
-    padding: 0 20px;
-  }
-
   .header {
     margin-block-end: 60px;
     padding: 20px 0;
+    margin-inline: 20px;
   }
 
   .dark-decorated-zone {
@@ -256,6 +255,10 @@ body {
     margin-block-end: 163px;
     inline-size: 50%;
     justify-self: end;
+  }
+
+  .main {
+    margin-inline: 20px;
   }
 
   .topic {
@@ -328,6 +331,7 @@ body {
 
   .footer {
     padding-block: 20px;
+    margin-inline: 20px;
   }
 }
 
